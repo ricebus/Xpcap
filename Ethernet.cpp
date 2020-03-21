@@ -51,16 +51,17 @@ std::ostream& operator<<(std::ostream& os, const Ethernet& obj)
     return os;
 }
 
-EthernetType Ethernet::GetEthernetType() {
+EthernetType Ethernet::GetEthernetType() const
+{
     return _etherType;
 }
 
-const MACAddress *Ethernet::GetDstAddr()
+const MACAddress *Ethernet::GetDstAddr() const
 {
 	return _dstAddr;
 }
 
-const MACAddress *Ethernet::GetSrcAddr()
+const MACAddress *Ethernet::GetSrcAddr() const
 {
 	return _srcAddr;
 }

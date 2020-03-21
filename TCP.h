@@ -34,15 +34,15 @@ public:
     constexpr static uint32_t HeaderSize() { return 20; }
     ~TCP() override = default;
 
-	uint16_t GetSrcPort();
-	uint16_t GetDstPort();
-	uint32_t GetSeqNumber();
-	uint32_t GetAckNumber();
-	uint8_t GetDataOffset();
-	TCPFlags GetFlags();
-	uint16_t GetWindowSize();
-	uint16_t GetChecksum();
-	uint16_t GetUrgentPtr();
+	uint16_t GetSrcPort() const;
+	uint16_t GetDstPort() const;
+	uint32_t GetSeqNumber() const;
+	uint32_t GetAckNumber() const;
+	uint8_t GetDataOffset() const;
+	TCPFlags GetFlags() const;
+	uint16_t GetWindowSize() const;
+	uint16_t GetChecksum() const;
+	uint16_t GetUrgentPtr() const;
 };
 
 #endif //XPCAP_TCP_H

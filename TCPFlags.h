@@ -6,6 +6,7 @@
 #define XPCAP_TCPFLAGS_H
 
 #include <cstdint>
+#include <type_traits>
 
 enum class TCPFlags : uint16_t
 {
@@ -19,5 +20,22 @@ enum class TCPFlags : uint16_t
     CWR = 128,
     NS = 256
 };
+
+
+inline TCPFlags operator|(TCPFlags lhs, TCPFlags rhs)
+{
+	return static_cast<TCPFlags> (
+			static_cast<std::underlying_type<TCPFlags>::type>(lhs) |
+			static_cast<std::underlying_type<TCPFlags>::type>(rhs)
+	);
+}
+
+inline TCPFlags operator&(TCPFlags lhs, TCPFlags rhs)
+{
+	return static_cast<TCPFlags> (
+			static_cast<std::underlying_type<TCPFlags>::type>(lhs) &
+			static_cast<std::underlying_type<TCPFlags>::type>(rhs)
+	);
+}
 
 #endif //XPCAP_TCPFLAGS_H

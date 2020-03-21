@@ -24,7 +24,7 @@ MACAddress::MACAddress(const std::string& macString) : MACAddress(macString.c_st
 
 MACAddress::MACAddress(const char* macString)
 {
-	std::sscanf(macString, "%u:%u:%u:%u:%u:%u", _octets, _octets + 1, _octets + 2, _octets + 3, _octets + 4,
+	std::sscanf(macString, "%02x:%02x:%02x:%02x:%02x:%02x", _octets, _octets + 1, _octets + 2, _octets + 3, _octets + 4,
 				_octets + 5);
 }
 

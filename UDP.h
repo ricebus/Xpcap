@@ -27,10 +27,10 @@ public:
     constexpr static uint32_t HeaderSize() { return 8; }
     ~UDP() override = default;
 
-	uint16_t GetSrcPort();
-	uint16_t GetDstPort();
-	uint16_t GetLength();
-	uint16_t GetChecksum();
+	uint16_t GetSrcPort() const;
+	uint16_t GetDstPort() const;
+	uint16_t GetLength() const;
+	uint16_t GetChecksum() const;
 
 };
 

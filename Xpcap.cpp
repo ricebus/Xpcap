@@ -14,6 +14,7 @@
 
 Xpcap::Xpcap(std::string &filename, std::size_t bufferSize)
 {
+	_linkProtocolType = LinkProtocolType::Null;
     _filename = filename;
     _fileSize = 0;
     _buffer = nullptr;
@@ -27,12 +28,9 @@ bool Xpcap::Parse()
         if(this->Read() <= 24) // Pcap Global Header Size
             return false;
 
-    //std::cout << "Read " << read_size << " bytes out of " << file_size << " bytes" << std::endl;
-    uint32_t linkLayerType;
-    std::memcpy(&linkLayerType, _buffer + 20, 4);
+    std::memcpy(&_linkProtocolType, _buffer + 20, 4);
 
     unsigned int ptr = 24;
-//    int i = 1;
 
     uint8_t *bytes = _buffer + ptr;
     size_t size = _actualBufferSize - ptr;
@@ -42,7 +40,7 @@ bool Xpcap::Parse()
     {
         auto packet = new Packet(bytes, size);
         // Ethernet
-        if (linkLayerType == 1)
+        if (_linkProtocolType == LinkProtocolType::Ethernet)
         {
           	auto ethernet = new Ethernet(bytes + PcapHeader::HeaderSize(),
                                               size - PcapHeader::HeaderSize());
@@ -132,4 +130,9 @@ void Xpcap::Close()
 const std::list<Packet *> *Xpcap::GetPacketList()
 {
     return &_packetList;
+}
+
+LinkProtocolType Xpcap::GetLinkProtocolType()
+{
+	return _linkProtocolType;
 }

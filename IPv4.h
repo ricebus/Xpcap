@@ -42,17 +42,17 @@ public:
     IPProtocol GetIPProtocol();
     ~IPv4() override;
 
-    uint8_t GetVersion();
-    uint8_t GetIHL();
-    uint8_t GetDSCP();
-    uint8_t GetECN();
-    uint16_t GetLength();
-    uint16_t GetIdentification();
-    IPFlags GetFlags();
-    uint16_t GetFragmentOffset();
-    uint8_t GetTTL();
-    IPProtocol GetProtocol();
-    uint16_t GetChecksum();
+    uint8_t GetVersion() const;
+    uint8_t GetIHL() const;
+    uint8_t GetDSCP() const;
+    uint8_t GetECN() const;
+    uint16_t GetLength() const;
+    uint16_t GetIdentification() const;
+    IPFlags GetFlags() const;
+    uint16_t GetFragmentOffset() const;
+    uint8_t GetTTL() const;
+    IPProtocol GetProtocol() const;
+    uint16_t GetChecksum() const;
     const IPAddress* GetSrcAddr();
     const IPAddress* GetDstAddr();
 };

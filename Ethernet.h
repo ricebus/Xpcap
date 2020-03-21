@@ -24,9 +24,9 @@ public:
     [[nodiscard]] std::string ToString() const override;
     friend std::ostream& operator<<(std::ostream& os, const Ethernet& obj);
     constexpr static uint32_t HeaderSize() { return 14; }
-    EthernetType GetEthernetType();
-    const MACAddress* GetSrcAddr();
-    const MACAddress* GetDstAddr();
+    EthernetType GetEthernetType() const;
+    const MACAddress* GetSrcAddr() const;
+    const MACAddress* GetDstAddr() const;
     ~Ethernet() override;
 };
 

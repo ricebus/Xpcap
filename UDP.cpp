@@ -52,22 +52,22 @@ std::ostream& operator<<(std::ostream& os, const UDP& obj)
     return os;
 }
 
-uint16_t UDP::GetSrcPort()
+uint16_t UDP::GetSrcPort() const
 {
 	return _srcPort;
 }
 
-uint16_t UDP::GetDstPort()
+uint16_t UDP::GetDstPort() const
 {
 	return _dstPort;
 }
 
-uint16_t UDP::GetLength()
+uint16_t UDP::GetLength() const
 {
 	return _length;
 }
 
-uint16_t UDP::GetChecksum()
+uint16_t UDP::GetChecksum() const
 {
 	return _checksum;
 }

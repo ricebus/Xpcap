@@ -83,47 +83,47 @@ std::ostream& operator<<(std::ostream& os, const TCP& obj)
     return os;
 }
 
-uint16_t TCP::GetSrcPort()
+uint16_t TCP::GetSrcPort() const
 {
 	return _srcPort;
 }
 
-uint16_t TCP::GetDstPort()
+uint16_t TCP::GetDstPort() const
 {
 	return _dstPort;
 }
 
-uint32_t TCP::GetSeqNumber()
+uint32_t TCP::GetSeqNumber() const
 {
 	return _seqNumber;
 }
 
-uint32_t TCP::GetAckNumber()
+uint32_t TCP::GetAckNumber() const
 {
 	return _ackNumber;
 }
 
-uint8_t TCP::GetDataOffset()
+uint8_t TCP::GetDataOffset() const
 {
 	return _dataOffset;
 }
 
-TCPFlags TCP::GetFlags()
+TCPFlags TCP::GetFlags() const
 {
 	return _flags;
 }
 
-uint16_t TCP::GetWindowSize()
+uint16_t TCP::GetWindowSize() const
 {
 	return _windowSize;
 }
 
-uint16_t TCP::GetChecksum()
+uint16_t TCP::GetChecksum() const
 {
 	return _checksum;
 }
 
-uint16_t TCP::GetUrgentPtr()
+uint16_t TCP::GetUrgentPtr() const
 {
 	return _urgentPtr;
 }

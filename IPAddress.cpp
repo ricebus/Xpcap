@@ -25,10 +25,10 @@ IPAddress::IPAddress(const std::string& ipString) : IPAddress(ipString.c_str())
 
 IPAddress::IPAddress(const char* ipString)
 {
-	std::sscanf(ipString, "%u.%u.%u.%u", _octets, _octets + 1, _octets + 2, _octets + 3);
+	std::sscanf(ipString, "%c.%c.%c.%c", _octets, _octets + 1, _octets + 2, _octets + 3);
 }
 
-std::string IPAddress::ToString()
+std::string IPAddress::ToString() const
 {
     std::string out;
     char *buf = new char[16];

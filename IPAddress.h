@@ -13,7 +13,7 @@ public:
     IPAddress();
     IPAddress(const uint8_t* octets, size_t size);
     IPAddress(const std::string& ipString);
-    std::string ToString();
+    [[nodiscard]] std::string ToString() const;
     bool operator==(const IPAddress& other);
     bool operator!=(const IPAddress& other);
     friend std::ostream& operator<<(std::ostream& os,  IPAddress& obj);

@@ -106,57 +106,57 @@ const IPAddress *IPv4::GetSrcAddr()
     return _srcAddr;
 }
 
-uint16_t IPv4::GetChecksum()
+uint16_t IPv4::GetChecksum() const
 {
     return _checksum;
 }
 
-IPProtocol IPv4::GetProtocol()
+IPProtocol IPv4::GetProtocol() const
 {
     return _protocol;
 }
 
-uint8_t IPv4::GetTTL()
+uint8_t IPv4::GetTTL() const
 {
     return _ttl;
 }
 
-uint16_t IPv4::GetFragmentOffset()
+uint16_t IPv4::GetFragmentOffset() const
 {
     return _fragmentOffset;
 }
 
-IPFlags IPv4::GetFlags()
+IPFlags IPv4::GetFlags() const
 {
     return _flags;
 }
 
-uint16_t IPv4::GetIdentification()
+uint16_t IPv4::GetIdentification() const
 {
     return _identification;
 }
 
-uint16_t IPv4::GetLength()
+uint16_t IPv4::GetLength() const
 {
     return _totalLength;
 }
 
-uint8_t IPv4::GetECN()
+uint8_t IPv4::GetECN() const
 {
     return _ecn;
 }
 
-uint8_t IPv4::GetDSCP()
+uint8_t IPv4::GetDSCP() const
 {
     return _dscp;
 }
 
-uint8_t IPv4::GetIHL()
+uint8_t IPv4::GetIHL() const
 {
     return _ihl;
 }
 
-uint8_t IPv4::GetVersion()
+uint8_t IPv4::GetVersion() const
 {
     return _version;
 }

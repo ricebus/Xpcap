@@ -8,6 +8,7 @@
 
 #include <string>
 #include "Packet.h"
+#include "LinkProtocolType.h"
 #include <list>
 #include <fstream>
 
@@ -20,6 +21,7 @@ private:
     std::ifstream _fileStream;
     std::size_t _bufferSize;
     std::size_t _actualBufferSize;
+	LinkProtocolType _linkProtocolType;
 
     bool Open();
     void Close();
@@ -30,6 +32,7 @@ public:
     size_t Read();
     size_t PcapSize();
     const std::list<Packet*>* GetPacketList();
+	LinkProtocolType GetLinkProtocolType();
     bool Parse();
 };
 
