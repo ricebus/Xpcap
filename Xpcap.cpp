@@ -74,7 +74,7 @@ bool Xpcap::Parse()
 
             auto linkProtocol = dynamic_cast<LinkProtocol*>(ethernet);
             packet->SetPayload(&linkProtocol);
-            _packetList.push_front(packet);
+            _packetList.push_back(packet);
         }
 
         ptr += packet->GetPcapHeader()->SavedPacketLength() + PcapHeader::HeaderSize();
